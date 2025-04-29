@@ -8,10 +8,12 @@ public class Vehicle implements Comparable<Vehicle> {
 
     private final String brandName;
     private final int yearOfManufacture;
+    private final double price;
 
-    public Vehicle(String brandName, int yearOfManufacture) {
+    public Vehicle(String brandName, int yearOfManufacture, double price) {
         this.brandName = brandName;
         this.yearOfManufacture = yearOfManufacture;
+        this.price = price;
     }
 
     public String getBrandName() {
@@ -20,6 +22,10 @@ public class Vehicle implements Comparable<Vehicle> {
 
     public int getYearOfManufacture() {
         return yearOfManufacture;
+    }
+
+    public double getPrice() {
+        return price;
     }
 
     @Override

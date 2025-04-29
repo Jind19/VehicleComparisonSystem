@@ -16,10 +16,10 @@ public class VehicleTest {
     void setUp(){
         vehicleList = new ArrayList<>();
 
-        vehicleList.add(new Vehicle("Toyota", 2021));
-        vehicleList.add(new Vehicle("Ford", 2018));
-        vehicleList.add(new Vehicle("BMW", 2022));
-        vehicleList.add(new Vehicle("Honda", 2020));
+        vehicleList.add(new Vehicle("Toyota", 2021, 30000));
+        vehicleList.add(new Vehicle("Ford", 2018, 35000.50));
+        vehicleList.add(new Vehicle("BMW", 2022, 55000.99));
+        vehicleList.add(new Vehicle("Honda", 2020, 29500.00));
     }
 
     @Test
@@ -40,6 +40,17 @@ public class VehicleTest {
         assertEquals("Ford", vehicleList.get(1).getBrandName());
         assertEquals("Honda", vehicleList.get(2).getBrandName());
         assertEquals("Toyota", vehicleList.get(3).getBrandName());
+
+    }
+
+    @Test
+    @DisplayName("Vehicles should sort by price high to low")
+    void testSortByPrice(){
+        vehicleList.sort(new VehiclePriceComparator());
+        assertEquals("BMW", vehicleList.get(0).getBrandName());
+        assertEquals("Ford", vehicleList.get(1).getBrandName());
+        assertEquals("Toyota", vehicleList.get(2).getBrandName());
+        assertEquals("Honda", vehicleList.get(3).getBrandName());
 
     }
 }
