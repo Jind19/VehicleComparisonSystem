@@ -1,5 +1,7 @@
 package org.fleet;
 
+import javax.print.attribute.standard.PrinterMoreInfoManufacturer;
+
 /**
  * Vehicle class that implements Comparable to sort by year descending (newest first).
  */
@@ -30,7 +32,12 @@ public class Vehicle implements Comparable<Vehicle> {
 
     @Override
     public int compareTo(Vehicle otherVehicle) {
-        return Integer.compare(otherVehicle.yearOfManufacture, this.yearOfManufacture);  //Newest first
+        int result = Integer.compare(otherVehicle.yearOfManufacture, this.yearOfManufacture);  //Newest first
+        if(result == 0){
+            //sort by brand name in this case
+        result = this.brandName.compareToIgnoreCase(otherVehicle.brandName);
+        }
+        return result;
     }
 
     @Override

@@ -11,7 +11,7 @@ public class VehicleApp {
         List<Vehicle> vehicleList = new ArrayList<>();
 
         vehicleList.add(new Vehicle("Toyota", 2021, 30000));
-        vehicleList.add(new Vehicle("Ford", 2018, 35000.50));
+        vehicleList.add(new Vehicle("Ford", 2022, 35000.50));
         vehicleList.add(new Vehicle("BMW", 2022, 55000.99));
         vehicleList.add(new Vehicle("Honda", 2020, 29500.00));
 
